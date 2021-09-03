@@ -2,9 +2,9 @@
 
 return [
     'frontend' => [
-        'jpmschuler/ito-extengine/gotorecordurl' => [
+        'jpmschuler/RedirectMissingSite/MissingSiteRedirect' => [
             'target' => \ Jpmschuler\RedirectMissingSite\Middleware\MissingSiteRedirect::class,
-            'before' => [
+            'after' => [
                 'typo3/cms-frontend/page-resolver',
             ],
         ],
