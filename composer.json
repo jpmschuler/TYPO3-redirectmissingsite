@@ -8,6 +8,7 @@
 		}
 	},
 	"config": {
+		"bin-dir": ".Build/bin",
 		"preferred-install": {
 			"*": "dist"
 		},
