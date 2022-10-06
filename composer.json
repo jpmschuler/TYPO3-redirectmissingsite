@@ -1,41 +1,27 @@
 {
 	"name": "jpmschuler/redirectmissingsite",
+	"type": "typo3-cms-extension",
 	"description": "Allow 404 handling for unconfigured domains/sites",
 	"license": [
 		"GPL-2.0+"
 	],
-	"type": "typo3-cms-extension",
 	"authors": [
 		{
 			"name": "J. Peter M. Schuler",
 			"email": "j.peter.m.schuler@uni-due.de"
 		}
 	],
-	"support": {
-		"issues": "https://github.com/jpmschuler/TYPO3-redirectmissingsite/issues",
-		"source": "https://github.com/jpmschuler/TYPO3-redirectmissingsite"
-	},
 	"require": {
 		"typo3/cms-core": "^10.4.32 || ^v11.5.16",
 		"typo3/cms-frontend": "^10.4.32 || ^v11.5.16"
 	},
 	"require-dev": {
-		"ergebnis/composer-normalize": "^2.28.3",
-		"roave/security-advisories": "dev-latest",
-		"seld/jsonlint": "^1.8"
-	},
-	"prefer-stable": true,
-	"autoload": {
-		"psr-4": {
-			"Jpmschuler\\RedirectMissingSite\\": "Classes/"
-		}
+		"roave/security-advisories": "dev-latest"
 	},
 	"config": {
 		"allow-plugins": {
 			"typo3/class-alias-loader": true,
-			"typo3/cms-composer-installers": true,
-			"bk2k/configuration-installer": true,
-			"ergebnis/composer-normalize": true
+			"typo3/cms-composer-installers": true
 		},
 		"bin-dir": ".Build/bin",
 		"preferred-install": {
@@ -50,18 +36,17 @@
 			"web-dir": ".Build/public"
 		}
 	},
+	"autoload": {
+		"psr-4": {
+			"Jpmschuler\\RedirectMissingSite\\": "Classes/"
+		}
+	},
+	"prefer-stable": true,
 	"scripts": {
-		"post-autoload-dump": [
-			"@link-extension"
-		],
 		"ci": [
 			"@ci:static"
 		],
 		"ci:composer:normalize": "@php ./tools/composer-normalize --dry-run",
-		"ci:dynamic": [
-			"@ci:tests"
-		],
-		"ci:json:lint": "find . ! -path '*.Build/*' ! -path '*Resources/Private/node_modules/*' -name '*.json' | xargs php .Build/vendor/bin/jsonlint -q",
 		"ci:php": [
 			"@ci:php:copypaste",
 			"@ci:php:cs-fixer",
@@ -85,24 +70,12 @@
 			"@ci:ts:lint",
 			"@ci:yaml:lint"
 		],
-		"ci:tests": [
-			"@ci:tests:unit",
-			"@ci:tests:functional"
-		],
-		"ci:tests:functional": "echo \"not implemented\"",
-		"ci:tests:unit": "echo \"not implemented\"",
-		"ci:ts:lint": "@php ./tools/typo3-typoscript-lint -c Configuration/TsLint.yml --ansi -n --fail-on-warnings -vvv Configuration/TypoScript",
-		"ci:yaml:lint": "find . ! -path '*.Build/*' ! -path '*Resources/Private/node_modules/*' -name '*.yml' | xargs php ./tools/yaml-lint",
 		"fix:php": [
 			"@fix:php:cs",
 			"@fix:php:sniff"
 		],
 		"fix:php:cs": "@php ./tools/php-cs-fixer fix --config .php_cs.php",
 		"fix:php:sniff": "@php ./tools/phpcbf Classes Configuration Tests",
-		"link-extension": [
-			"@php -r 'is_dir($extFolder=__DIR__.\"/.Build/public/typo3conf/ext/\") || mkdir($extFolder, 0777, true);'",
-			"@php -r 'file_exists($extFolder=__DIR__.\"/.Build/public/typo3conf/ext/redirectmissingsite\") || symlink(__DIR__,$extFolder);'"
-		],
 		"prepare-release": [
 			"rm .gitignore",
 			"rm -rf .Build",
@@ -122,5 +95,9 @@
 			"rm phive.xml",
 			"rm phpcs.xml"
 		]
+	},
+	"support": {
+		"issues": "https://github.com/jpmschuler/TYPO3-redirectmissingsite/issues",
+		"source": "https://github.com/jpmschuler/TYPO3-redirectmissingsite"
 	}
 }
