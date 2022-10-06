@@ -4,4 +4,3 @@ parameters:
       - .Build/vendor/autoload.php
     scanDirectories:
       - Classes
-      - Tests
