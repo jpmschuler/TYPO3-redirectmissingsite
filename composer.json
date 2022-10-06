@@ -1,6 +1,9 @@
 {
 	"name": "jpmschuler/redirectmissingsite",
 	"description": "Allow 404 handling for unconfigured domains/sites",
+	"license": [
+		"GPL-2.0+"
+	],
 	"type": "typo3-cms-extension",
 	"authors": [
 		{
@@ -87,7 +90,7 @@
 			"@ci:tests:functional"
 		],
 		"ci:tests:functional": "echo \"not implemented\"",
-		"ci:tests:unit":  "echo \"not implemented\"",
+		"ci:tests:unit": "echo \"not implemented\"",
 		"ci:ts:lint": "@php ./tools/typo3-typoscript-lint -c Configuration/TsLint.yml --ansi -n --fail-on-warnings -vvv Configuration/TypoScript",
 		"ci:yaml:lint": "find . ! -path '*.Build/*' ! -path '*Resources/Private/node_modules/*' -name '*.yml' | xargs php ./tools/yaml-lint",
 		"fix:php": [
