@@ -1,0 +1,2 @@
+# cat=Defaults; type=string; label=Either a PageId or a full URL
+siteNotFoundErrorPage = 0

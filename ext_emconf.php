@@ -1,15 +1,15 @@
 <?php
-$EM_CONF['redirectmissingsite'] = [
+$EM_CONF[$_EXTKEY] = [
     'title' => 'Redirect Missing Site',
     'description' => 'Allow 404 handling for unconfigured domains/sites',
     'category' => 'plugin',
     'author' => 'Schuler, J. Peter M.',
     'author_email' => 'j.peter.m.schuler@uni-due.de',
-    'version' => '0.1.0-dev',
+    'version' => '1.0.0',
     'constraints' => [
         'depends' => [
-            'php' => '7.2.0-',
-            'typo3' => '9.5.0-10.99.99',
+            'php' => '7.4.0-',
+            'typo3' => '10.4.0-11.99.99',
         ],
     ],
     'state' => 'stable',
