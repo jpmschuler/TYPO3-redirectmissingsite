@@ -179,7 +179,6 @@ $config = \PhpCsFixer\Config::create()
 
 $finder = \PhpCsFixer\Finder::create()
     ->in('Classes')
-    ->in('Tests')
     ->in('Configuration');
 
 return $config->setFinder($finder);
