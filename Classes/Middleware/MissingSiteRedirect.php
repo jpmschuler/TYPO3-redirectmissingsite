@@ -11,6 +11,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Http\Response;
 use TYPO3\CMS\Core\Http\Stream;
+use TYPO3\CMS\Core\Log\LogManager;
 use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -51,8 +52,13 @@ class MissingSiteRedirect implements MiddlewareInterface
                     ],
                 ];
                 $context = stream_context_create($options);
-                $content = file_get_contents($url, false, $context);
-
+                try {
+                    $content = file_get_contents($url, false, $context);
+                } catch (\Exception $e) {
+                    $logger = GeneralUtility::makeInstance(LogManager::class)->getLogger(static::class);
+                    $logger->error('MissingSiteRedirect failed because content could not be fetched from ' . $url . ' - ' . $e->getMessage());
+                    return $handler->handle($request);
+                }
                 return self::return404Response($content);
             }
 

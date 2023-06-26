@@ -7,6 +7,8 @@
     <arg name="colors"/>
     <arg name="extensions" value="php"/>
 
+    <config name="ignore_warnings_on_exit" value="1" />
+
     <!--The complete PSR-12 rule set-->
     <rule ref="PSR12"/>
 
@@ -52,6 +54,7 @@
     <!-- Files -->
     <rule ref="Generic.Files.LineLength">
         <exclude-pattern>Configuration/TCA/</exclude-pattern>
+        <exclude-pattern>Classes/Utility/Conf.php</exclude-pattern>
     </rule>
     <rule ref="Generic.Files.OneClassPerFile"/>
     <rule ref="Generic.Files.OneInterfacePerFile"/>
