@@ -96,7 +96,6 @@
 			"@lint:php",
 			"@lint:php-cs-fixer:dry-run",
 			"@lint:phpcs:dry-run",
-			"@lint:phpcpd",
 			"@lint:phpstan"
 		],
 		"lint:php": "find *.php Classes Configuration Tests -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
@@ -105,8 +104,6 @@
 		"lint:php-cs-fixer:dry-run:onlyerrors": "php-cs-fixer fix --dry-run --using-cache=no --diff > \/dev\/null",
 		"lint:php:onlyerrors": "find *.php Classes Configuration Tests -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l > \/dev\/null",
 		"lint:phpcbf": "phpcbf Classes Configuration Tests",
-		"lint:phpcpd": "phpcpd Classes",
-		"lint:phpcpd:onlyerrors": "phpcpd Classes  > \/dev\/null",
 		"lint:phpcs": "@lint:phpcbf",
 		"lint:phpcs:dry-run": "phpcs Classes Configuration Tests",
 		"lint:phpcs:dry-run:ci": "phpcs --report=full --report-\\\\Micheh\\\\PhpCodeSniffer\\\\Report\\\\Gitlab=report.phpcs.json  Classes Configuration Tests",
@@ -122,23 +119,24 @@
 			"@typo3-extdev-helper-init"
 		],
 		"post-update": "@post-install",
-        "prepare-release": [
-            "rm .gitignore",
-            "rm -rf .Build",
-            "rm -rf .github",
-            "rm -rf .gitlab",
-            "rm -rf Tests",
-            "rm -rf tools",
-            "rm .editorconfig",
-            "rm .gitattributes",
-            "rm .php-cs-fixer.php",
-            "rm .php_cs.php",
-            "rm .phpcs.xml",
-            "rm .phpstan.constants.php.yml",
-            "rm GitVersion.yml",
-            "rm rector.php",
-            "rm typoscript-lint.php"
-        ],
+		"prepare-release": [
+			"rm .gitignore",
+			"rm -rf .Build",
+			"rm -rf .ddev",
+			"rm -rf .github",
+			"rm -rf .gitlab",
+			"rm -rf Tests",
+			"rm -rf tools",
+			"rm .editorconfig",
+			"rm .gitattributes",
+			"rm .php-cs-fixer.php",
+			"rm .php_cs.php",
+			"rm .phpcs.xml",
+			"rm .phpstan.constants.php.yml",
+			"rm GitVersion.yml",
+			"rm rector.php",
+			"rm typoscript-lint.php"
+		],
 		"pretest:deprecations": [
 			"mkdir -p .Build\/$(composer config extra.typo3\/cms.extension-key)",
 			"find .\/* -mindepth 0 -maxdepth 0 -not -path '.\/node_modules' -exec cp -r {} .Build\/$(composer config extra.typo3\/cms.extension-key)\/ \\;"

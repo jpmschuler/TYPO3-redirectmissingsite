@@ -13,8 +13,6 @@ $EM_CONF[$_EXTKEY] = [
         ],
     ],
     'state' => 'stable',
-    'uploadfolder' => false,
-    'createDirs' => '',
     'autoload' => [
         'psr-4' => [
             'Jpmschuler\\RedirectMissingSite\\' => 'Classes/',
