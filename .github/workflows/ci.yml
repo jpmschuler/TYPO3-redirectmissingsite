@@ -120,4 +120,4 @@ jobs:
           API-TOKEN: ${{ secrets.TYPO3_API_TOKEN }}
           EXTENSION_KEY: "redirectmissingsite"
         run: |
-          tailor ter:publish --comment="$CHANGELOG" ${GitVersion_MajorMinorPatch}
+          .Build/bin/tailor ter:publish --comment="$CHANGELOG" ${GitVersion_MajorMinorPatch}
