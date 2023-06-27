@@ -116,8 +116,8 @@ jobs:
           git push origin v${GitVersion_MajorMinorPatch}
           git push || true
       - name: "Publish new version to TER"
-        with:
-          api-token: ${{ secrets.TYPO3_API_TOKEN }}
-          extension_key: "redirectmissingsite"
+        env:
+          API-TOKEN: ${{ secrets.TYPO3_API_TOKEN }}
+          EXTENSION_KEY: "redirectmissingsite"
         run: |
           tailor ter:publish --comment="$CHANGELOG" ${GitVersion_MajorMinorPatch}
