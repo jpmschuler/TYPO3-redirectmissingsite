@@ -112,7 +112,6 @@
 		"lint:typoscript": "typoscript-lint",
 		"post-update": "@post-install",
 		"prepare-release": [
-			"rm .gitattributes",
 			"rm .gitignore",
 			"rm -rf .Build",
 			"rm -rf .ddev",
