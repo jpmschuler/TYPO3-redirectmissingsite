@@ -120,7 +120,6 @@
 			"rm -rf Tests",
 			"rm -rf tools",
 			"rm .editorconfig",
-			"rm .gitattributes",
 			"rm .php-cs-fixer.php",
 			"rm .phpcs.xml",
 			"rm GitVersion.yml",
