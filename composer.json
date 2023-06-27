@@ -112,6 +112,7 @@
 		"lint:typoscript": "typoscript-lint",
 		"post-update": "@post-install",
 		"prepare-release": [
+			"rm .gitattributes",
 			"rm .gitignore",
 			"rm -rf .Build",
 			"rm -rf .ddev",
@@ -122,9 +123,7 @@
 			"rm .editorconfig",
 			"rm .gitattributes",
 			"rm .php-cs-fixer.php",
-			"rm .php_cs.php",
 			"rm .phpcs.xml",
-			"rm .phpstan.constants.php.yml",
 			"rm GitVersion.yml",
 			"rm rector.php",
 			"rm typoscript-lint.php"
