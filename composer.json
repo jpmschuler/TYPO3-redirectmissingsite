@@ -21,18 +21,18 @@
 		"typo3/cms-frontend": "^v12.4.4"
 	},
 	"require-dev": {
-        "ergebnis/composer-normalize": "^2.28.3",
-        "friendsofphp/php-cs-fixer": "^v3.14.1",
-        "helmich/typo3-typoscript-lint": "^v3.1.0",
-        "micheh/phpcs-gitlab": "^1.1.0",
-        "michielroos/typo3scan": "^1.7.7",
-        "saschaegerer/phpstan-typo3": "^1.8.5",
-        "sebastian/phpcpd": "^6.0.3",
-        "squizlabs/php_codesniffer": "^3.7.2",
-        "ssch/typo3-rector": "^1.2.2",
-        "typo3/tailor": "^1.5.0",
-        "ext-json": "*",
-        "typo3/minimal": "^v12.4.0"
+		"ext-json": "*",
+		"ergebnis/composer-normalize": "^2.28.3",
+		"friendsofphp/php-cs-fixer": "^v3.14.1",
+		"helmich/typo3-typoscript-lint": "^v3.1.0",
+		"micheh/phpcs-gitlab": "^1.1.0",
+		"michielroos/typo3scan": "^1.7.7",
+		"saschaegerer/phpstan-typo3": "^1.8.5",
+		"sebastian/phpcpd": "^6.0.3",
+		"squizlabs/php_codesniffer": "^3.7.2",
+		"ssch/typo3-rector": "^1.2.2",
+		"typo3/minimal": "^v12.4.0",
+		"typo3/tailor": "^1.5.0"
 	},
 	"prefer-stable": true,
 	"autoload": {
