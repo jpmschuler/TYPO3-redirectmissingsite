@@ -17,8 +17,8 @@
 	},
 	"require": {
 		"php": "^8.1",
-		"typo3/cms-core": "^v12.4.4",
-		"typo3/cms-frontend": "^v12.4.4"
+		"typo3/cms-core": "^v13.4.16",
+		"typo3/cms-frontend": "^v13.4.16"
 	},
 	"require-dev": {
 		"ext-json": "*",
@@ -28,10 +28,9 @@
 		"micheh/phpcs-gitlab": "^1.1.0",
 		"michielroos/typo3scan": "^1.7.7",
 		"saschaegerer/phpstan-typo3": "^1.8.5",
-		"sebastian/phpcpd": "^6.0.3",
 		"squizlabs/php_codesniffer": "^3.7.2",
 		"ssch/typo3-rector": "^1.2.2",
-		"typo3/minimal": "^v12.4.0",
+		"typo3/minimal": "^v13.4.0",
 		"typo3/tailor": "^1.5.0"
 	},
 	"prefer-stable": true,
@@ -60,7 +59,6 @@
 			"typo3-deprecations": "11"
 		},
 		"typo3/cms": {
-			"app-dir": ".Build",
 			"extension-key": "redirectmissingsite",
 			"web-dir": ".Build/public"
 		}
@@ -86,8 +84,7 @@
 			"echo 'running precommit checks...'",
 			"@lint:php:onlyerrors",
 			"@lint:php-cs-fixer:dry-run:onlyerrors",
-			"@lint:phpcs:dry-run:onlyerrors",
-			"@lint:phpcpd:onlyerrors"
+			"@lint:phpcs:dry-run:onlyerrors"
 		],
 		"lint:all": [
 			"@lint:php",
