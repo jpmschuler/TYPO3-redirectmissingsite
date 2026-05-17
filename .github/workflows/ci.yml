@@ -14,13 +14,13 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       - name: "Install PHP"
         uses: shivammathur/setup-php@v2
         with:
           php-version: "${{ matrix.php-version }}"
           coverage: none
-          tools: composer:v2.5
+          tools: composer:v2
       - name: "Run PHP lint"
         run: "composer lint:php"
     strategy:
@@ -34,13 +34,13 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       - name: "Install PHP"
         uses: shivammathur/setup-php@v2
         with:
           php-version: "${{ matrix.php-version }}"
           coverage: none
-          tools: composer:v2.5
+          tools: composer:v2
       - name: "Show Composer version"
         run: composer --version
       - name: "Cache dependencies installed with composer"
@@ -73,7 +73,7 @@ jobs:
       majorMinorPatch: ${{ steps.gitversion.outputs.majorMinorPatch }} # To use an output in another job, you have to map it to a job output.
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.PAT }}
           fetch-depth: 0
